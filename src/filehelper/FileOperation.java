@@ -10,10 +10,16 @@ public class FileOperation implements FilenameFilter {
 		extendName = "." + s;
 	}
 
+	/**
+	 * 匹配文件後綴
+	 **/
 	public boolean accept(File dir, String name) {
 		return name.endsWith(extendName);
 	}
 
+	/**
+	 * 連續寫入數據到文件中
+	 */
 	public void writeFile(String conent) {
 
 		BufferedWriter out = null;
@@ -32,6 +38,9 @@ public class FileOperation implements FilenameFilter {
 		}
 	}
 
+	/**
+	 * 讀取文件
+	 */
 	public void readFile(String str) throws IOException {
 		File file = new File(str);
 		FileReader in;
